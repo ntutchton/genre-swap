@@ -20,10 +20,7 @@ Do you like Metallica? I bet you'll love Rachmoninoff!  -- or something like tha
 
 Here's a demo of me using the app:
 
-<video width="700" controls>
-  <source src="demo.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+[View demo video](demo.webm)
 
 ---
 
