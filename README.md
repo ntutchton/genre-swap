@@ -21,7 +21,7 @@ Do you like Metallica? I bet you'll love Rachmoninoff!  -- or something like tha
 Here's a demo of me using the app:
 
 <video width="700" controls>
-  <source src="demo.webm?raw=1" type="video/webm">
+  <source src="https://github.com/ntutchton/genre-swap/raw/master/demo.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
