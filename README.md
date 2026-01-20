@@ -18,6 +18,13 @@ I was sort of imagining this app as being the opposite of the way Spotify or App
 
 Do you like Metallica? I bet you'll love Rachmoninoff!  -- or something like that :)
 
+Here's a demo of me using the app:
+
+<video width="700" controls>
+  <source src="demo.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
 ---
 
 # 1. Dataset
