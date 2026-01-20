@@ -1,0 +1,25 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Track {
+  title             String   @id
+  artist            String?
+  album             String?
+  year              String?
+  genre             String?
+  tempo             Float?
+  duration_seconds  Float?
+  key_signature     String?
+  chord_progression String[]
+  mood              String?
+  energy            String?
+
+  @@map("tracks")
+}

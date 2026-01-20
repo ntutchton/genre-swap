@@ -1,0 +1,62 @@
+# =========================
+# Node / Next.js
+# =========================
+app/node_modules/
+app/.next/
+app/out/
+app/.env.local
+app/.env.development.local
+app/.env.production.local
+app/.env.test.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Prisma
+# =========================
+app/prisma/migrations/
+app/prisma/dev.db
+app/prisma/*.db
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Python
+# =========================
+python/__pycache__/
+python/**/*.pyc
+python/.venv/
+python/venv/
+python/.env
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# =========================
+# Build / Cache
+# =========================
+dist/
+build/
+.cache/
+coverage/
+
+# =========================
+# Misc
+# =========================
+*.log
+*.tmp

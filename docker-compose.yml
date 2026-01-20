@@ -1,0 +1,102 @@
+version: "3.9"
+
+services:
+  app:
+    build: ./app
+    container_name: nextjs_app
+    ports:
+      - "3000:3000"
+    # environment:
+    #   DATABASE_URL: postgresql://postgres:postgres@db:5432/nextapp
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - python
+    volumes:
+      - ./app:/app
+      - next_node_modules:/app/node_modules
+    networks:
+      - nextapp_net
+    # command: sh -c "npm install && npm run dev"
+
+  python:
+    build: ./python
+    container_name: python_service
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./python:/python
+    environment:
+      PG_HOST: db
+      PG_PORT: 5432
+      PG_DB: nextapp
+      PG_USER: postgres
+      PG_PASSWORD: postgres
+    depends_on:
+      - db
+    networks:
+      - nextapp_net
+
+  db:
+    image: postgres:16
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nextapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nextapp_net
+
+volumes:
+  postgres_data:
+  next_node_modules:
+
+networks:
+  nextapp_net:
+
+# version: "3.9"
+
+# services:
+#   app:
+#     build: ./app
+#     container_name: nextjs_app
+#     ports:
+#       - "3000:3000"
+#     env_file:
+#       - .env
+#     depends_on:
+#       - db
+#       - python
+#     volumes:
+#       - ./app:/app
+#       - next_node_modules:/app/node_modules
+#     command: sh -c "npm install && npm run dev"
+
+#   python:
+#     build: ./python
+#     container_name: python_service
+#     ports:
+#       - "5000:5000"
+#     volumes:
+#       - ./python:/python
+
+#   db:
+#     image: postgres:16
+#     container_name: postgres_db
+#     environment:
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: postgres
+#       POSTGRES_DB: nextapp
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data:
+#   next_node_modules:

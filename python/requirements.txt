@@ -1,0 +1,12 @@
+flask
+numpy
+librosa
+mutagen
+scikit-learn
+joblib
+psycopg2-binary
+torch
+torchaudio
+transformers
+protobuf
+pandas
